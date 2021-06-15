@@ -8,8 +8,11 @@ class EasyInvoice:
     @staticmethod
     def create(data):
         url = "https://api.easyinvoice.cloud/v1/invoices"
-        response = requests.post(url, data)
-        result = json.loads(json.dumps(response.json()))
+        data = {
+            "data": data
+        }
+        response = requests.post(url, json=data)
+        result = response.json()
         return result["data"]["pdf"]
 
     @staticmethod
