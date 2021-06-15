@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: pip3 install bump
       - run: git config --global user.email "info@easyapis.io"
       - run: git config --global user.name "Danny Veldhoen"
       - run: bump
