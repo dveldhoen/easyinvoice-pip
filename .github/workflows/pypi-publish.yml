@@ -29,39 +29,23 @@ jobs:
       # Push back to repo
       - run: git push https://${{secrets.GPR_TOKEN}}@github.com/dveldhoen/easyinvoice-pip
 
-#  publish-npm:
-#    needs: bump-version
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          ref: 'master'
-#      - uses: actions/setup-node@v1
-#        with:
-#          node-version: 12
-#          registry-url: https://registry.npmjs.org/
-#      - run: cat package.json
-#      - run: npm publish
-#        env:
-#          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+  publish-to-pypi:
+    needs: bump-version
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: 'master'
 
-#  publish-gpr:
-#    needs: bump-version
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          ref: 'master'
-#      - uses: actions/setup-node@v1
-#        with:
-#          node-version: 12
-#          registry-url: https://npm.pkg.github.com/
-#          scope: '@dveldhoen'
-#      - env:
-#          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-#        run: |
-#          npm config set registry 'https://npm.pkg.github.com/@dveldhoen'
-#          npm publish
+      # Install build dependencies
+      - run: npm run install-dependencies
+
+      # Build the package
+      - run: npm run build
+
+      # Publish the package
+      - run: python3 -m twine upload -u ${{secrets.PYPI_USERNAME}} -p ${{secrets.PYPI_PASSWORD}} dist/*
+
 
 
 
