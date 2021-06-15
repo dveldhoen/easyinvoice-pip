@@ -21,6 +21,8 @@ jobs:
       - run: git config --global user.email "info@easyapis.io"
       - run: git config --global user.name "Danny Veldhoen"
       - run: bump
+      - run: export VERSION=`bump`
+      - run: git commit -m "Bumped version to $VERSION"
       - run: git push https://${{secrets.GPR_TOKEN}}@github.com/dveldhoen/easyinvoice-pip
 
 #  publish-npm:
