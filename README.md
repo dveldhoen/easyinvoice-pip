@@ -43,7 +43,7 @@ $ pip3 install easyinvoice
 ## Example
 
 ```python
-from easyinvoice.src.EasyInvoice import EasyInvoice
+from easyinvoice import EasyInvoice
 
 data = {
     #Defaults to INVOICE
