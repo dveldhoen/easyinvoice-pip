@@ -73,7 +73,7 @@ data = {
     # }
 }
 
-# Returns a base64 string containing the invoice as PDF
+# Returns a dict containing all the data of the invoice
 pdfdata = EasyInvoice.create(data)
 
 # Store the pdf locally
