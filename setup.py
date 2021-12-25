@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="easyinvoice",  # This is the name of the package
-    version="2.0.2",  # The initial release version
+    version="2.0.3",  # The initial release version
     author="Danny Veldhoen",  # Full name of the author
     description="Easily create beautiful pdf invoices.",
     long_description=long_description,  # Long description read from the the readme file
