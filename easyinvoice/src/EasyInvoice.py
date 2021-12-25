@@ -18,4 +18,4 @@ class EasyInvoice:
     @staticmethod
     def save(invoice_base64, filename="invoice"):
         with open(filename + ".pdf", 'wb') as file:
-            file.write(base64.b64decode(invoice_base64["pdf"]))
+            file.write(base64.b64decode(invoice_base64))

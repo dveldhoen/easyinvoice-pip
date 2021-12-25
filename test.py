@@ -86,7 +86,7 @@ data = {
 }
 
 # Returns a dict containing all the data of the invoice
-pdfdata = EasyInvoice.create(data)
+result = EasyInvoice.create(data)
 
 # Store the pdf locally
-EasyInvoice.save(pdfdata, 'invoice')
+EasyInvoice.save(result["pdf"], 'invoice')
