@@ -169,17 +169,17 @@ EasyInvoice.save(result.pdf, 'invoice.pdf')
 
 ## Return values
 
-|<b>Key</b> | Value | Data Type |
-|---|---|---|
-| result.products | Array of objects reflecting the products used in creation | Array |
-| result.products[key].subtotal | Rounded price without tax per product | Number |
-| result.products[key].tax | Rounded tax per product | Number |
-| result.products[key].total | Rounded price including tax per product | Number |
-| result.tax | Array of objects containing total calculated tax per unique tax rate | Array |
-| result.tax[rate] | Total tax for all products with same tax rate  | Number |
-| result.subtotal | Rounded price without tax for all products | Number |
-| result.total | Rounded price without tax for all products | Number |
-| result.pdf | The PDF file as base64 string | String |
+| <b>Key</b>                    | Value                                                                | Data Type     |
+|-------------------------------|----------------------------------------------------------------------|---------------|
+| <b>result.pdf</b>             | <b>The PDF file as base64 string</b>                                 | <b>String</b> |
+| result.products               | Array of objects reflecting the products used in creation            | Array         |
+| result.products[key].subtotal | Rounded price without tax per product                                | Number        |
+| result.products[key].tax      | Rounded tax per product                                              | Number        |
+| result.products[key].total    | Rounded price including tax per product                              | Number        |
+| result.tax                    | Array of objects containing total calculated tax per unique tax rate | Array         |
+| result.tax[rate]              | Total tax for all products with same tax rate                        | Number        |
+| result.subtotal               | Rounded price without tax for all products                           | Number        |
+| result.total                  | Rounded price without tax for all products                           | Number        |
 
 ## Locales and Currency
 
