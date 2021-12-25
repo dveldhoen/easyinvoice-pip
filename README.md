@@ -58,7 +58,7 @@ from easyinvoice import EasyInvoice
 result = EasyInvoice.create({})
 
 # To save the PDF locally call the save function
-EasyInvoice.save(result.pdf)
+EasyInvoice.save(result["pdf"])
 ```
 
 ## Full Example
