@@ -134,6 +134,7 @@ data = {
     ],
     # The message you would like to display on the bottom of your invoice
     "bottom-notice": "Kindly pay your invoice within 15 days.",
+    # Settings to customize your invoice
     "settings": {
         "currency": "USD", # See documentation 'Locales and Currency' for more info. Leave empty for no currency.
         #     "locale": "nl-NL", # Defaults to en-US, used for number formatting (See documentation 'Locales and Currency')
@@ -144,6 +145,7 @@ data = {
         #     "margin-bottom": 25, # Defaults to '25'
         #     "format": "A4" # Defaults to A4, options: A3, A4, A5, Legal, Letter, Tabloid
     },
+    # Translate your invoice to your preferred language
     "translate": {
         #     "invoice": "FACTUUR",  # Default to 'INVOICE'
         #     "number": "Nummer", # Defaults to 'Number'
