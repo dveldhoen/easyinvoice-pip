@@ -69,6 +69,11 @@ from easyinvoice import EasyInvoice
 
 # Data will contain all the information we would like to see on our invoice
 data = {
+    # Customize enables you to provide your own templates
+    # Please review the documentation for instructions and examples
+    "customize": {
+    #  "template": "SGVsbG8gd29ybGQh" // Must be base64 encoded html. This example contains 'Hello World!' in base64  
+    },
     "images": {
         # The logo on top of your invoice
         "logo": "https://public.easyinvoice.cloud/img/logo_en_original.png",
@@ -229,9 +234,274 @@ data = {
 
 [Click here for an online tool to convert an image to base64](https://base64.guru/converter/encode/image)
 
-## View PDF
+## Template customization
 
-You could view your base64 pdf through the following website:
-https://base64.guru/converter/decode/pdf
+Download our default template (invoice-v2) <a href="https://public.easyinvoice.cloud/templates/invoice-v2/index.txt" download>here</a> to have an example which you can customize.
 
-Paste the base64 string and click 'Decode Base64 to PDF'.
+Supported file types:
+
+- Base64
+- URL (soon)
+- (Escaped) string (soon)
+
+```python
+# You are able to provide your own html template
+html = "<p>Hello world! This is invoice number %number%</p>"
+
+data = {
+    "customize": {
+        # Your template needs to be base64 encoded
+        "template": base64.b64encode(html)
+    },
+    "settings": {
+        "number": '2022.0001'
+    }
+}
+
+EasyInvoice.create(data)
+
+# This will return a pdf with the following content
+# Hello world! This is invoice number 2022.0001
+```
+
+### Variable placeholders
+The following placeholders can be put into your template. They will be replaced by their corresponding value upon creation.
+
+<table>
+<tr>
+<td><b>Placeholder</b></td> 
+<td><b>Will be replaced by</b></td>
+</tr>
+<tr>
+<td>%document-title%</td> 
+<td>translate.invoice</td>
+</tr>
+<tr>
+<td>%logo%</td> 
+<td>images.logo</td>
+</tr>
+<tr>
+<td>%company-from%</td> 
+<td>sender.company</td>
+</tr>
+<tr>
+<td>%address-from%	</td> 
+<td>sender.address</td>
+</tr>
+<tr>
+<td>%zip-from%	</td> 
+<td>sender.zip</td>
+</tr>
+<tr>
+<td>%city-from%</td> 
+<td>sender.city</td>
+</tr>
+<tr>
+<td>%country-from%</td> 
+<td>sender.country</td>
+</tr>
+<tr>
+<td>%sender-custom-1%</td> 
+<td>sender.custom1</td>
+</tr>
+<tr>
+<td>%sender-custom-2%</td> 
+<td>sender.custom2</td>
+</tr>
+<tr>
+<td>%sender-custom-3%</td> 
+<td>sender.custom3</td>
+</tr>
+<tr>
+<td>%company-to%</td> 
+<td>client.company</td>
+</tr>
+<tr>
+<td>%address-to%	</td> 
+<td>client.address</td>
+</tr>
+<tr>
+<td>%zip-to%	</td> 
+<td>client.zip</td>
+</tr>
+<tr>
+<td>%city-to%</td> 
+<td>client.city</td>
+</tr>
+<tr>
+<td>%country-to%</td> 
+<td>client.country</td>
+</tr>
+<tr>
+<td>%client-custom-1%</td> 
+<td>client.custom1</td>
+</tr>
+<tr>
+<td>%client-custom-2%</td> 
+<td>client.custom2</td>
+</tr>
+<tr>
+<td>%client-custom-3%</td> 
+<td>client.custom3</td>
+</tr>
+<tr>
+<td>%number-title%</td> 
+<td>translate.number</td>
+</tr>
+<tr>
+<td>%number%</td> 
+<td>settings.number</td>
+</tr>
+<tr>
+<td>%date-title%</td> 
+<td>translate.date</td>
+</tr>
+<tr>
+<td>%date%</td> 
+<td>settings.date</td>
+</tr>
+<tr>
+<td>%due-date-title%</td> 
+<td>translate.due-date</td>
+</tr>
+<tr>
+<td>%due-date%</td> 
+<td>settings.due-date</td>
+</tr>
+<tr>
+<td>%products-header-products%</td> 
+<td>translate.products</td>
+</tr>
+<tr>
+<td>%products-header-quantity%</td> 
+<td>translate.quantity</td>
+</tr>
+<tr>
+<td>%products-header-price%</td> 
+<td>translate.price</td>
+</tr>
+<tr>
+<td>%products-header-total%</td> 
+<td>translate.product-total</td>
+</tr>
+<tr>
+<td>
+A custom product row must be enclosed in products tags like:
+
+```html
+<products>
+    <!-- Product row html -->
+</products>
+```
+Don't leave out the product tags or your custom product row won't be iterable by the template parser and you will end up with a single product row. Customize the html as you wish.
+</td>
+<td>products</td>
+</tr>
+<tr>
+<td>
+
+```html
+Within: <products></products>
+```
+
+%description%
+</td> 
+<td>products[].description</td>
+</tr>
+<tr>
+<td>
+
+```html
+Within: <products></products>
+```
+
+%quantity%
+</td>  
+<td>products[].quantity</td>
+</tr>
+<tr>
+<td>
+
+```html
+Within: <products></products>
+```
+
+%price%
+</td>   
+<td>products[].price</td>
+</tr>
+<tr>
+<td>
+
+```html
+Within: <products></products>
+```
+
+%row-total%
+</td>    
+<td>products[].quantity * products[].price (rounded)</td>
+</tr>
+<tr>
+<td>%subtotal-title%</td> 
+<td>translate.subtotal</td>
+</tr>
+<tr>
+<td>%subtotal%</td> 
+<td><b>Auto inserted:</b>
+<br/>
+Calculated total price excluding tax</td>
+</tr>
+<tr>
+<td>
+A custom tax row must be enclosed in tax tags like:
+
+```html
+<tax>
+    <!-- Tax row html -->
+</tax>
+```
+Don't leave out the tax tags or your custom tax row won't be iterable by the template parser and you will end up with a single tax row. Customize the html as you wish.
+</td>
+<td>tax</td>
+</tr>
+<tr>
+<td>
+
+```html
+Within: <tax></tax>
+```
+
+%tax-notation%
+</td>    
+<td>settings.tax-notation</td>
+</tr>
+<tr>
+<td>
+
+```html
+Within: <tax></tax>
+```
+
+%tax-rate%
+</td>    
+<td><b>Auto inserted:</b><br/>
+Distinct tax rate used in products</td>
+</tr>
+<tr>
+<td>
+
+```html
+Within: <tax></tax>
+```
+
+%tax%
+</td>    
+<td><b>Auto inserted:</b><br/>
+Calculated total tax for rate</td>
+</tr>
+<tr>
+<td>%total%</td>    
+<td><b>Auto inserted:</b><br/>
+Calculated total price including tax</td>
+</tr>
+</table>
