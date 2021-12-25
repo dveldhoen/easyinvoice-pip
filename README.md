@@ -28,6 +28,12 @@ Much appreciated!
     <img width="350" style="border: 1px black solid" src="https://public.easyinvoice.cloud/img/sample-invoice-background.png" alt="Easy Invoice Sample With Background">
 </div>
 
+### JSON Configs used for above samples:
+
+- <a href="https://public.easyinvoice.cloud/json/easyinvoice-sample.json">[View JSON] First Sample</a>
+- <a href="https://public.easyinvoice.cloud/json/easyinvoice-sample-background.json">[View JSON] Second Sample</a>
+
+
 ## Installing
 
 Using PIP:
