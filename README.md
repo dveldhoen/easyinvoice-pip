@@ -164,7 +164,7 @@ data = {
 result = EasyInvoice.create(data)
 
 # Store the pdf locally
-EasyInvoice.save(result.pdf, 'invoice.pdf')
+EasyInvoice.save(result["pdf"], 'myInvoice')
 ```
 
 ## Return values
