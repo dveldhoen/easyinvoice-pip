@@ -258,7 +258,6 @@ Supported file types:
 
 - Base64
 - URL (soon)
-- (Escaped) string (soon)
 
 ```python
 # You are able to provide your own html template
