@@ -3,7 +3,6 @@
     "install-dependencies": "python3 -m pip install setuptools wheel twine -U",
     "build": "python3 setup.py sdist bdist_wheel",
     "publish:test": "python3 -m twine upload --repository testpypi dist/*",
-    "publish:prod": "python3 -m twine upload dist/*",
-    "test": ""
+    "publish:prod": "python3 -m twine upload dist/*"
   }
 }
