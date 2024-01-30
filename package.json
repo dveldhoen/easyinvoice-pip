@@ -1,8 +1,11 @@
 {
   "scripts": {
-    "install-dependencies": "python3 -m pip install setuptools wheel twine -U",
-    "build": "python3 setup.py sdist bdist_wheel",
-    "publish:test": "python3 -m twine upload --repository testpypi dist/*",
-    "publish:prod": "python3 -m twine upload dist/*"
+    "install-dependencies": "pip install pipenv && pipenv install",
+    "build": "rimraf build && rimraf dist && python3 setup.py sdist bdist_wheel",
+    "publish:test": "npm run build && python3 -m twine upload --repository testpypi dist/*",
+    "publish:prod": "npm run build && python3 -m twine upload dist/*"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5"
   }
 }

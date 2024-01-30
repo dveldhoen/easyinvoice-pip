@@ -3,3 +3,5 @@ build
 dist
 easyinvoice/src/easyinvoice.egg-info
 invoice.pdf
+node_modules
+venv
