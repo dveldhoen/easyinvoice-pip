@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="easyinvoice",  # This is the name of the package
-    version="2.1.4",  # The initial release version
+    version="3.0.2",  # The initial release version
     author="Danny Veldhoen",  # Full name of the author
     description="Easily create beautiful pdf invoices.",
     long_description=long_description,  # Long description read from the the readme file
@@ -19,5 +19,7 @@ setuptools.setup(
     python_requires='>=3.6',  # Minimum version requirement of the package
     py_modules=["easyinvoice"],  # Name of the python package
     package_dir={'': 'easyinvoice/src'},  # Directory of the source code of the package
-    install_requires=[]  # Install other dependencies if any
+    install_requires=[
+        'requests'
+    ],
 )

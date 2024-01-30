@@ -1,6 +1,7 @@
 from easyinvoice.src.EasyInvoice import EasyInvoice
 
 data = {
+    "mode": "developmentx",
     "images": {
         # The logo on top of your invoice
         "logo": "https://public.easyinvoice.cloud/img/logo_en_original.png",
@@ -85,8 +86,15 @@ data = {
     },
 }
 
-# Returns a dict containing all the data of the invoice
-result = EasyInvoice.create(data)
+try:
+    # Returns a dict containing all the data of the invoice
+    result = EasyInvoice.create(data)
 
-# Store the pdf locally
-EasyInvoice.save(result["pdf"], 'invoice')
+    # Store the pdf locally
+    EasyInvoice.save(result["pdf"], 'invoice')
+except Exception as e:
+    # If an error occurs, it will be caught here
+    print(e)
+
+
+

@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+
+[dev-packages]
+twine = "*"
+wheel = "*"
+setuptools = "*"
+
+[requires]
+python_version = "3.11"
+
+[scripts]
+build = "python3 setup.py sdist bdist_wheel"
+publish-test = "python3 -m twine upload --repository testpypi dist/*"
+publish-prod = "python3 -m twine upload dist/*"
+
