@@ -40,6 +40,9 @@ jobs:
       # Install build dependencies
       - run: npm run install-dependencies
 
+      # Install npm dependecies
+      - run: npm i
+
       # Build the package
       - run: npm run build
 
