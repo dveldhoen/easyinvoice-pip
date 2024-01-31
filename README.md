@@ -50,11 +50,11 @@ $ pip3 install easyinvoice
 
 ## Platform support
 
-| <b>Platform</b> | Repository | Supported | Link                                                                                                                                                                     |
-|-----------------|------------|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| PHP             | Composer   | Yes!      | <a href="https://packagist.org/packages/easyapis.io/easyinvoice"><img src="https://img.shields.io/badge/EasyInvoice%20on-Composer-blue" alt="Available on Composer"></a> |
-| Javascript      | NPM        | Yes!      | <a href="https://www.npmjs.com/package/easyinvoice"><img src="https://img.shields.io/badge/EasyInvoice%20on-NPM-blue" alt="Available on NPM"></a>                        |
-| Python          | PIP        | Yes!      | <a href="https://pypi.org/project/easyinvoice/"><img src="https://img.shields.io/badge/EasyInvoice%20on-PIP-blue" alt="Available on PIP"></a>                            |
+| <b>Platform</b> | Repository | Supported | Link                                                                                                                                                                       |
+|-----------------|------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PHP             | Composer   | Yes!      | <a href="https://packagist.org/packages/budgetinvoice/easyinvoice"><img src="https://img.shields.io/badge/EasyInvoice%20on-Composer-blue" alt="Available on Composer"></a> |
+| Javascript      | NPM        | Yes!      | <a href="https://www.npmjs.com/package/easyinvoice"><img src="https://img.shields.io/badge/EasyInvoice%20on-NPM-blue" alt="Available on NPM"></a>                          |
+| Python          | PIP        | Yes!      | <a href="https://pypi.org/project/easyinvoice/"><img src="https://img.shields.io/badge/EasyInvoice%20on-PIP-blue" alt="Available on PIP"></a>                              |
 <br/>
 
 ## Sample
@@ -166,6 +166,7 @@ EasyInvoice.save(result["pdf"])
 ```
 
 ## High volumes: asynchronous invoice creation
+Our API is able to handle high volumes of requests. If you need to create a lot of invoices fast, make sure to create them asynchronously. This will allow you to create multiple invoices at the same time.
 ```python
 import asyncio
 from easyinvoice import EasyInvoice
