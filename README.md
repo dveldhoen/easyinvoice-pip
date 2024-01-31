@@ -4,13 +4,13 @@
 <h4 align="center">Build for Web and Backend 💪</h4>
 <br/>
 <p align="center">
-  <a href="https://www.npmjs.com/package/easyinvoice"><img src="https://img.shields.io/pypi/v/easyinvoice.svg" alt="Version"></a>
-  <a href="https://github.com/dveldhoen/easyinvoice/actions?query=branch%3Amaster"><img src="https://github.com/dveldhoen/easyinvoice/workflows/build/badge.svg" alt="Build Status"></a>
-  <a href="https://codecov.io/github/dveldhoen/easyinvoice"><img src="https://img.shields.io/codecov/c/github/dveldhoen/easyinvoice/master.svg" alt="Coverage Status"></a>  
+  <a href="https://pypi.org/project/easyinvoice/"><img src="https://img.shields.io/pypi/v/easyinvoice.svg" alt="Version"></a>
+  <a href="https://github.com/dveldhoen/easyinvoice-pip/actions?query=branch%3Amaster"><img src="https://github.com/dveldhoen/easyinvoice-pip/workflows/build/badge.svg" alt="Build Status"></a>
+  <a href="https://codecov.io/github/dveldhoen/easyinvoice-pip"><img src="https://img.shields.io/codecov/c/github/dveldhoen/easyinvoice-pip/master.svg" alt="Coverage Status"></a>  
   <br/>
-  <a href="https://npmcharts.com/compare/easyinvoice?minimal=true"><img src="https://img.shields.io/pypi/dm/easyinvoice.svg" alt="Downloads"></a>
-  <a href="https://www.npmjs.com/package/easyinvoice"><img src="https://img.shields.io/npm/l/easyinvoice.svg" alt="License"></a>
-  <a href="https://github.com/dveldhoen/easyinvoice"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="Pull Request's Welcome"></a>
+  <a href="https://pypistats.org/packages/easyinvoice"><img src="https://img.shields.io/pypi/dm/easyinvoice.svg" alt="Downloads"></a>
+  <a href="https://pypi.org/project/easyinvoice/"><img src="https://img.shields.io/pypi/l/easyinvoice.svg" alt="License"></a>
+  <a href="https://github.com/dveldhoen/easyinvoice-pip"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="Pull Request's Welcome"></a>
 </p>
 
 <p align="center">
@@ -105,7 +105,7 @@ by either not setting the mode or setting the mode to 'production'.
 
 ## Direct REST API access
 
-In case you don't want to use NPM, but you want to call our invoice creation api directly.
+In case you don't want to use the pip package, but you want to call our invoice creation api directly.
 
 ```shell
 # HTTPS POST 

@@ -10,6 +10,3 @@ requests = "*"
 twine = "*"
 wheel = "*"
 setuptools = "*"
-
-[requires]
-python_version = "3.11"
