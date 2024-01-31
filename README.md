@@ -300,7 +300,7 @@ data = {
     # Customize enables you to provide your own templates
     # Please review the documentation for instructions and examples
     # "customize": {
-    #  "template": "SGVsbG8gd29ybGQh" // Must be base64 encoded html. This example contains 'Hello World!' in base64  
+    #  "template": base64.b64encode("<p>Hello World!</p>".encode()) // Must be base64 encoded html. This example contains 'Hello World!' in base64  
     # },
 }
 
