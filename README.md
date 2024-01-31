@@ -334,8 +334,6 @@ try:
     
     # Create a dictionary with the settings to create the invoice
     data = {
-        "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
-        "mode": "development", # Production or development, defaults to production
         "products": [
             {
                 "quantity": 2,
@@ -363,8 +361,6 @@ Used for number formatting and the currency symbol:
 ```python
 # E.g. for Germany, prices would look like 123.456,78 €
 data = {
-    "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
-    "mode": "development", # Production or development, defaults to production
     "settings":
         {
             "locale": "de-DE",
@@ -374,8 +370,6 @@ data = {
 
 # E.g. for US, prices would look like $123,456.78
 data = {
-    "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
-    "mode": "development", # Production or development, defaults to production
     "settings":
         {
             "locale": "en-US",
