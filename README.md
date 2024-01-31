@@ -334,6 +334,8 @@ try:
     
     # Create a dictionary with the settings to create the invoice
     data = {
+        "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
+        "mode": "development", # Production or development, defaults to production
         "products": [
             {
                 "quantity": 2,
@@ -361,6 +363,8 @@ Used for number formatting and the currency symbol:
 ```python
 # E.g. for Germany, prices would look like 123.456,78 €
 data = {
+    "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
+    "mode": "development", # Production or development, defaults to production
     "settings":
         {
             "locale": "de-DE",
@@ -370,6 +374,8 @@ data = {
 
 # E.g. for US, prices would look like $123,456.78
 data = {
+    "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
+    "mode": "development", # Production or development, defaults to production
     "settings":
         {
             "locale": "en-US",
@@ -400,7 +406,9 @@ Supported file types:
 ### URL
 
 ```python
-data = {
+data = {    
+    "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
+    "mode": "development", # Production or development, defaults to production
     "images": {
         "logo": "https://public.easyinvoice.cloud/img/logo_en_original.png",
         "background": "https://public.easyinvoice.cloud/img/watermark_draft.jpg"
@@ -411,7 +419,9 @@ data = {
 ### Base64
 
 ```python
-data = {
+data = {    
+    "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
+    "mode": "development", # Production or development, defaults to production
     # Note: Sample base64 string
     # Please use the link below to convert your image to base64
     "images": {
@@ -436,7 +446,9 @@ Supported file types:
 # You are able to provide your own html template
 html = "<p>Hello world! This is invoice number %number%</p>"
 
-data = {
+data = {    
+    "apiKey": "free", # Please register to receive a production apiKey: https://app.budgetinvoice.com/register
+    "mode": "development", # Production or development, defaults to production
     "customize": {
         # Your template needs to be base64 encoded
         "template": base64.b64encode(html)
